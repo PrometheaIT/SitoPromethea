@@ -1,0 +1,293 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+backface-visibility: hidden;
+-webkit-backface-visibility: hidden;
+}
+
+
+
+.capture-target {
+  transition: opacity 0.5s ease;
+}
+
+/* Hero Section */
+.hero {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 1rem; 
+height: 80vh; 
+text-align: center;
+position: relative;
+padding: 0 1rem;
+}
+
+.hero-title {
+font-size: clamp(3.8rem, 10vw, 14rem);
+animation: title-glow 3s ease-in-out infinite alternate;
+z-index: 2;
+}
+
+.loader {
+  display: inline-flex;
+  overflow: visible;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4em 0.8em; 
+  line-height: 1.2;
+  white-space: nowrap;
+  position: relative;
+
+}
+
+.loader-text {
+  font-size: clamp(1.2rem, 2.5vw, 3.5rem);
+  font-weight: 700;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  width: auto;
+  animation: 
+    typewriter 2s steps(40, end);
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes typewriter {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+
+@keyframes title-glow {
+    0% { text-shadow: 0 0 10px var(--primary); }
+    50% { text-shadow: 0 0 20px var(--tertiary); }
+    100% { text-shadow: 0 0 10px var(--secondary); }
+  }
+
+  
+.scroll-section {
+position: sticky;
+top: 0;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+opacity: 0;
+transition: opacity 0.5s ease-out;
+}
+
+.scroll-section a {
+  color: inherit; /* Eredita il colore dal genitore */
+  text-decoration: none; /* Opzionale: rimuove sottolineatura */
+}
+
+.scroll-section a:visited{
+  color: var(--text-color);
+}
+
+.scroll-section.active {
+opacity: 0.9;
+}
+
+.cardhome {
+width: 70%;
+height: 70%;
+backdrop-filter: blur(1rem);
+border-radius: 12px;
+background: var(--card3D-UI-background);
+box-shadow: 0 8px 20px var(--vetro);
+border: 1px solid var(--text-color);
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+font-size: clamp(1.2rem, 2.5vw, 3rem);
+transition: 
+  transform 0.6s cubic-bezier(0.33, 1, 0.68, 1),
+  opacity 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+position: relative;
+will-change: transform, opacity;
+padding: 2rem;
+flex-direction: column;
+overflow: hidden;
+contain: strict;
+transform: translateZ(0);
+backface-visibility: hidden;
+perspective: 1000px;
+}
+
+.module-icon {
+width: 5rem;
+height: 5rem;
+transition: all 0.4s ease;
+filter: drop-shadow(0 0 10px rgba(239, 0, 149, 0.5));
+color: var(--text-color);
+}
+
+/* Effetto hover card */
+.module-icon:hover  {
+transform: rotate(15deg) scale(1.5);
+filter: drop-shadow(0 0 15px var(--secondary));
+}
+
+/* Final Logo */
+.final-logo {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh; /* Spazio di sicurezza */
+    transition: 
+        opacity 0.6s cubic-bezier(0.33, 1, 0.68, 1),
+        filter 0.6s cubic-bezier(0.33, 1, 0.68, 1),
+        scale 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+    transform: translate3d(-50%, -50%, 0);
+    filter: blur(10px);
+    scale: 0.8;
+    contain: strict;
+    overflow: visible;
+    transform-origin: center center;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.final-logo.active {
+    opacity: 1;
+    filter: blur(0);
+    scale: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.final-logo img {
+    width: auto;
+    height: auto;
+    max-width: 80vw;
+    max-height: 80vh;
+    object-fit: contain;
+    transition: transform 0.3s ease-out;
+    filter: drop-shadow(0 4px 15px var(--primary));
+    animation: logo-float 3s ease-in-out infinite;
+}
+
+@keyframes logo-float {
+    0%, 100% { 
+        transform: translateY(0);
+        animation-timing-function: ease-in-out; 
+    }
+    50% { 
+        transform: translateY(-3%);
+        animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1); 
+    }
+}
+
+
+/* Disintegration Effect */
+#capture-container .capture-wrapper {
+  position: static; /* importante per html2canvas */
+ }
+
+.spacer {
+  height: 100vh;
+}
+
+
+/* Nascondi le card originali dopo la cattura */
+.hidden-cards .cardhome {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.hidden-cards {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+/* Value Section */
+.value-header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: clamp(1.8rem, 2.5vw, 3.5rem);
+    font-weight: 900;
+    color: var(--text-color);
+    padding: 1rem;
+    text-shadow: 0px 6px 30px var(--text-color);
+}
+
+.value-section {
+    padding: 6rem 2rem;
+    background: transparent;
+    backdrop-filter: blur(100px);
+    color: var(--text-color);
+    position: relative;
+    overflow: visible;
+    z-index: 2;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, clamp(300px, 45vw, 600px)), 1fr));
+    gap: 2rem;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    justify-items: center;
+}
+
+.value-card {
+    background: var(--vetro);
+    border: 1px solid var(--shadow-color);
+    box-shadow: 5px 5px 15px var(--vetro);
+    border-radius: 24px;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    position: relative;
+    min-height: 200px;
+    width: 100%;
+    max-width: 100%;
+    break-inside: avoid; 
+    transition: transform 0.3s ease;
+}
+
+
+.value-number {
+  grid-row: 1;                /* sulla prima riga */
+  justify-self: end;          /* allinea orizzontalmente a destra */
+  font-size: clamp(2rem, 5vw, 6rem);
+  font-weight: 800;
+  opacity: 0.5;
+  color: var(--scrollbar-thumb);
+}
+
+.value-content {
+  grid-row: 2;
+}
+
+.value-content h4 {
+  font-size: clamp(1rem, 2vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.value-content p {
+  font-size: clamp(0.8rem, 1.5vw + 0.5rem, 1.2rem);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) { /* Breakpoint mobile standard */
+  .cardhome {
+    max-height: 40%;
+  }
+}
