@@ -1,0 +1,312 @@
+
+:root {
+  --fs-h1-min: 1.75rem;
+  --fs-h1-max: 2.5rem;
+  --fs-base-min: 0.9rem;
+  --fs-base-max: 1rem;
+  --pad-container-min: 1rem;
+  --pad-container-max: 2rem;
+  --pad-form-min: 1rem;
+  --pad-form-max: 2.5rem;
+  --gap-min: 1rem;
+  --gap-max: 2rem;
+  --margin-container-min: 1.5rem;
+  --margin-container-max: 4rem;
+}
+
+/* ===========================
+   CONTENITORE PRINCIPALE
+   =========================== */
+.formdicontatto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: min(90%, 1200px); 
+    margin: clamp(var(--margin-container-min), 5vw, var(--margin-container-max));
+    padding: clamp(var(--pad-container-min), 4vw, var(--pad-container-max));
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--vetro);
+    position: relative;
+    overflow: visible;
+    backdrop-filter: blur(100px);
+    transform: translateZ(0); 
+}
+
+/* ===========================
+   HEADER
+   =========================== */
+.contact-header {
+    text-align: center;
+    margin-bottom: clamp(1rem, 2vw, 3rem);
+    text-shadow: 0 2px 10px var(--colore3);
+    position: relative;
+    z-index: 1;
+}
+
+.contact-header h1 {
+    font-size: clamp(var(--fs-h1-min), 10vw, var(--fs-h1-max));
+    color: var(--text-color);
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
+    letter-spacing: 2px;
+}
+
+.contact-header p {
+    color: var(--text-color);
+    opacity: 0.9;
+    max-width: 100%;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: clamp(1.2rem, 1vw, var(--fs-base-max));
+}
+
+/* ===========================
+   FORM
+   =========================== */
+.contact-form {
+    position: relative;
+    z-index: 1;
+    padding: clamp(var(--pad-form-min), 2vw, var(--pad-form-max));
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+    transform-style: preserve-3d; 
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+  gap: clamp(var(--gap-min), 2vw, var(--gap-max));
+  margin-bottom: clamp(1rem, 2vw, 2rem);
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: clamp(0.5rem, 1vw, 1.5rem);
+    min-width: 0;
+    width: 100%;
+}
+
+.form-group > * {
+    max-width: 100%;
+}
+
+
+.form-group label {
+    display: block;
+    color: var(--text-color);
+    background: none !important; /* Rimuove qualsiasi sfondo */
+    margin-bottom: clamp(0.4rem, 1vw, 0.5rem);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: clamp(var(--fs-base-min), 2vw, var(--fs-base-max));
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem);
+    background: transparent !important;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: clamp(var(--fs-base-min), 2vw, var(--fs-base-max));
+    transition: all 0.3s ease;
+    box-sizing: border-box;  
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+.form-group select option {
+    max-width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+    background: var(--colore4);
+    color: var(--text-color);
+    padding: 0.5rem;
+  }
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  color: var(--text-color);
+  max-width: 100%;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+.custom-select .selected {
+  width: 100%;
+  padding: clamp(0.75rem, 2vw, 1rem)
+           clamp(1rem,   3vw, 1.5rem);
+  font-size: clamp(var(--fs-base-min), 2vw, var(--fs-base-max));
+  box-sizing: border-box;
+  text-align: left;
+  background: transparent;
+  color: var(--text-color);
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.5;  
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding-right: 2.5rem !important;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.custom-select .selected::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid var(--text-color);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-select .selected:focus {
+  box-shadow: 0 0 0 2px var(--secondary);
+  outline: none;
+}
+
+.custom-select .options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;    
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  max-height: 15em;        
+  overflow-y: auto;
+  display: none;           
+  z-index: 1000;
+    scrollbar-width: thin;
+
+  background: linear-gradient(0deg, var(--colore3), var(--colore4));
+}
+
+
+.select-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-select .options li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.custom-select .options li:hover {
+  font-weight: 700;
+  color: var(--scrollbar-track);
+}
+
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 15px var(--shadow3);
+}
+
+.form-group textarea {
+  height: clamp(80px, 30vh, 550px);
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem);
+  font-size: clamp(var(--fs-base-min), 2vw, var(--fs-base-max));
+  resize: none;
+  box-sizing: border-box;
+  overflow-y: visible;
+}
+
+
+/* ===========================
+   PULSANTE INVIO
+   =========================== */
+.promethea-button {
+  background: var(--card3D-UI-background);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  padding: 0.75em 2em;
+  border: 1px solid var(--smoke-color-1);
+  border-radius: 40px 10px 40px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 8px 20px rgba(142, 36, 170, 0.2);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+  text-decoration: none;
+  display: block;
+  margin: clamp(1.5rem, 4vw, 2rem) auto 0;
+}
+
+.promethea-button:hover {
+  transform: scale(1.23);
+  box-shadow: 0 15px 15px var(--vetro);
+}
+
+/* ===========================
+   PRIVACY
+   =========================== */
+.form-privacy {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+
+.form-privacy input[type="checkbox"] {
+  flex-shrink: 0;
+  transform: scale(1.2);
+  margin: 0;
+  cursor: pointer;
+  width: 1.2em !important;
+  height: 1.2em !important;
+  margin: 0 !important;
+  background: transparent;
+  transition: all 0.3s ease;
+  accent-color: var(--colore4);
+}
+
+
+.form-privacy input[type="checkbox"]:hover {
+  filter: brightness(1.2);
+}
+
+
+
+.form-privacy a {
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.form-privacy a:hover {
+  color: var(--colore4);
+  text-decoration: underline;
+}
+

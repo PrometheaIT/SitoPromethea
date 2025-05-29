@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+
+  <!-- SEO Meta Tags -->
+  <title>Promethea S.r.l. – Accendi il Potenziale Aziendale</title>
+  <meta name="description" content="Promethea S.r.l. a Trieste: Immagine & Branding, Digital Transformation, Contabilità Strategica e Ottimizzazione Processi per far crescere la tua azienda." />
+  <meta name="keywords" content="Promethea, branding, digital transformation, contabilità strategica, ottimizzazione processi, Trieste" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical & Hreflang -->
+  <link rel="canonical" href="https://www.prometheasrl.it/" />
+  <link rel="alternate" hreflang="it-IT" href="https://www.prometheasrl.it/" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:site_name" content="Promethea S.r.l." />
+  <meta property="og:title" content="Promethea S.r.l. – Accendi il Potenziale Aziendale" />
+  <meta property="og:description" content="Scopri i nostri moduli di Immagine & Branding, Digital Transformation, Contabilità Strategica e Ottimizzazione Processi." />
+  <meta property="og:url" content="https://www.promethea.it/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.promethea.it/Logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Promethea S.r.l. – Accendi il Potenziale Aziendale" />
+  <meta name="twitter:description" content="Moduli di Branding, Digital Transformation, Contabilità Strategica, Ottimizzazione Processi." />
+  <meta name="twitter:image" content="https://www.promethea.it/Logo.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="preload" as="style" href="sidebar.css" />
+  <link rel="preload" as="style" href="gradienteanimato.css" />
+  <link rel="preload" as="style" href="credits.css" />
+  <link rel="preload" as="style" href="footer.css" />
+  <link rel="preload" as="style" href="theme.css" />
+
+  <link rel="stylesheet" href="credits.css" />
+  <link rel="stylesheet" href="sidebar.css" />
+  <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="gradienteanimato.css" />
+
+</head>
+<body class="dark-theme"> 
+<!-- Loading Overlay -->
+<div id="page-loader">
+  <div class="spinner"></div>
+<p>Caricamento in corso…</p>
+</div>
+  <!--  EFFETTO SFONDO -->
+  <svg hidden xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="gooey-effect">
+            <!-- Riduci il raggio del blur e semplifica il color matrix -->
+            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+            <feColorMatrix in="blur" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 16 -7"/>
+        </filter>
+    </defs>
+  </svg>
+  <div class="background-effect">
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="gooey-effect">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo"/>
+                <feBlend in="SourceGraphic" in2="goo"/>
+            </filter>
+        </defs>
+    </svg>
+    <div class="gradient-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+        <div class="blob blob-5"></div>
+        <div class="blob blob-interactive"></div>
+    </div>
+  </div>
+ <!-- Toggle Button -->
+ <label class="switch">
+  <input type="checkbox">
+  <span class="slider"></span>
+</label>
+<!-- Sidebar -->
+<div class="sidebar" role="navigation" aria-label="Menu principale">
+<!-- IMMAGINE CON LOGO -->
+<div class="logo-container">
+  <picture>
+    <!-- Metodo 1: CSS Variables -->
+    <source srcset="logo-dark.png" media="(prefers-color-scheme: dark)">
+    <img src="logo-light.png" 
+         data-theme-light="logo-light.png" 
+         data-theme-dark="logo-dark.png"
+         class="logoescritta theme-responsive-logo"
+         alt="Promethea Logo">
+  </picture>
+</div>
+
+ <div class="sidebar-toggle">
+    <svg viewBox="0 0 24 24" width="60%" height="60%">
+        <path stroke="var(--sidebar-toggle-contenuto)" stroke-width="2" stroke-linecap="round" 
+              d="M6 18L18 6M6 6l12 12"/>
+    </svg>
+</div>
+        
+  <div class="menu-items">
+  <a href="index.html"            class="menu-item">Home</a>
+  <div class="menu-item has-children" id="servizi-menu">
+    <div>
+      <span class="menu-label">Servizi</span>
+      <svg class="arrow-icon" viewBox="0 0 24 24">
+    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
+      </svg>
+    </div>
+    <div class="submenu">
+      <a href="immagine.html" class="submenu-item" style="margin-top: 1rem;">Immagine & Marketing</a>
+      <a href="digitalizzazione.html" class="submenu-item">Digitalizzazione & Automatismi</a>
+      <a href="contabilità.html" class="submenu-item">Contabilità & Fiscalità</a>
+      <a href="ottimizzazione.html" class="submenu-item">Ottimizzazione & Management</a>
+    </div>
+  </div>
+  <a href="portfolio.html"        class="menu-item">Portfolio</a>
+  <a href="ilteam.html"           class="menu-item">Team & Partners</a>
+  <a href="contattaci.html"       class="menu-item">Contattaci</a>
+  <a href="areaclienti.html"      class="menu-item">Area Clienti</a>
+  </div>
+</div>
+<!-- Aggiungi questo pulsante esterno -->
+<div class="sidebar-show-toggle">
+<span>&#9776;</span>
+</div>
+
+  <!-- Contenuto Principale -->
+  <div class="content">
+  <!-- Hero Section -->
+    <div class="credits-section">
+    <h1 class="section-title">Crediti Modelli 3D</h1>
+    <p>I seguenti modelli 3D sono stati utilizzati in questo progetto sotto licenza <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0</a>.</p>
+
+    <div class="credit-item">
+      <h2>📱 Smartphone – Modulo Immagine e Social</h2>
+      <p>Autore: <a href="https://sketchfab.com/7thFlare" target="_blank">7thFlare</a></p>
+      <p>Fonte: <a href="https://sketchfab.com/3d-models/smartphone-f94f072ac2724a1ba9059f5d373bbaac" target="_blank" rel="noopener noreferrer">Sketchfab</a></p>
+    </div>
+
+    <div class="credit-item">
+      <h2>🤖 Robot Playground – Modulo Digitalizzazione</h2>
+      <p>Autore: <a href="https://sketchfab.com/FrostIce" target="_blank">FrostIce</a></p>
+      <p>Fonte: <a href="https://sketchfab.com/3d-models/robot-playground-59fc99d8dcb146f3a6c16dbbcc4680da" target="_blank" rel="noopener noreferrer">Sketchfab</a></p>
+    </div>
+
+    <div class="credit-item">
+      <h2>🔘 Moneta 1 Euro – Modulo Contabilità e Fiscalità</h2>
+      <p>Autore: <a href="https://sketchfab.com/augustgl" target="_blank">augustgl</a></p>
+      <p>Fonte: <a href="https://sketchfab.com/3d-models/1-euro-coin-992424bd87714a29bcd4c58940e05ded" target="_blank" rel="noopener noreferrer">Sketchfab</a></p>
+    </div>
+
+    <div class="credit-item">
+      <h2>⏱️ Time Management – Modulo Ottimizzazione e Management</h2>
+      <p>Autore: <a href="https://sketchfab.com/Daniel97" target="_blank">Daniel97</a></p>
+      <p>Fonte: <a href="https://sketchfab.com/3d-models/3d-rendering-time-management-47a95fc332a3427c8d037ed36d6868e8" target="_blank">Sketchfab</a></p>
+    </div>
+
+  </div>
+
+    <!-- Animated Footer -->
+    <div id="footer">
+      <div class="footer-container">  
+          <div class="footer-col service-col">
+            <h4>Servizi</h4>
+            <ul>
+              <li><a href="immagine.html">Immagine &amp; Marketing</a></li>
+              <li><a href="digitalizzazione.html">Digitalizzazione &amp; Automatismi</a></li>
+              <li><a href="contabilità.html">Contabilità &amp; Fiscalità</a></li>
+              <li><a href="ottimizzazione.html">Ottimizzazione &amp; Management</a></li>
+            </ul>
+          </div>
+          <div class="footer-col links-col">
+            <h4>Governance</h4>
+            <ul>
+              <li><a href="/chi-siamo/statuto">Statuto e Atto Costitutivo</a></li>
+              <li><a href="/investor-relations">Investor Relations</a></li>
+              <li><a href="/governo-corporate">Codice Etico e Politica Aziendale</a></li>
+              <li><a href="/bilanci">Bilanci e Relazioni Annuali</a></li>
+              </ul>
+          </div>
+          <div class="footer-col contact-col">
+            <h4>Contatti</h4>
+            <address>
+              <a href="https://www.google.it/maps/place/Via+della+Ginnastica,+21%2FA,+34139+Trieste+TS/@45.6506453,13.7801838,134m/data=!3m2!1e3!4b1!4m6!3m5!1s0x477b6b11f9295555:0xafa3ab9b409e91d9!8m2!3d45.6506444!4d13.7808275!16s%2Fg%2F11p17tw03t?hl=it&entry=ttu&g_ep=EgoyMDI1MDQyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Via della Ginnastica 21/A, Trieste (TS)</a><br />
+              Tel: <a href="tel:+390409932100" aria-label="Chiama il numero +39 040 9932100" target="_blank">+39 040 993210 </a> <br>
+              Email: <a href="mailto:info@prometheasrl.it">info@prometheasrl.it</a>
+            </address>
+          </div>
+          <div class="footer-col assistenza">
+              <h4>Assistenza</h4>
+              <ul>
+                <li><a href="contattaci.html">Contattaci</a></li>
+                <li><a href="areaclienti.html">Supporto Clienti</a></li>
+                <li><a href="contattaci.html?service=reclamo">Reclami</a></li>
+                <li><a href="contattaci.html?service=lavoraconnoi">Lavora con Noi</a></li>
+              </ul>
+            </div>
+            <div class="footer-col social-col">
+              <h4>Follow Us</h4>
+                <div class="social-icons">
+                  <!-- INSTAGRAM --> 
+                  <div class="card">
+                    <div class="backgroundinstagram"></div>
+                    <!-- Testo principale -->
+                    <div class="logosocial">Instagram</div>
+                    <!-- Card animata -->
+                      <div class="box box1 box-instagram">
+                        <a href="https://www.instagram.com/promethea.srl/">
+                        <span class="icon">
+                          <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" class="svg">
+                            <path d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"></path>
+                          </svg>
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- FACEBOOK --> 
+                  <div class="card">
+                  <div class="backgroundfacebook"></div>
+                  <!-- Testo principale -->
+                  <div class="logosocial">Facebook</div>
+                  <!-- Card animata -->
+                  <div class="box box1 box-facebook">
+                  <a href="https://www.facebook.com/people/Promethea-Srl/61562272625469/">
+                  <span class="icon">
+                    <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" class="svg">
+                      <path d="M20 3H4C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H13V14H10V11H13V9C13 6.79086 14.7909 5 17 5H20V8H17C16.4477 8 16 8.44772 16 9V11H20V14H16V21H20C20.5523 21 21 20.5523 21 20V4C21 3.44772 20.5523 3 20 3Z"/>
+                    </svg>
+                  </span>
+                  </a>
+                  </div>
+                  </div>
+                  <!-- LINKEDIN --> 
+                  <div class="card">
+                    <div class="backgroundlinkedin"></div>
+                    
+                    <!-- Testo principale -->
+                    <div class="logosocial">Linkedin</div>
+
+                    <!-- Card animata -->
+                      <div class="box box1 box-linkedin">
+                        <a href="https://www.linkedin.com/in/promethea-s-r-l-416028340/">
+                        <span class="icon">
+                          <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" class="svg">
+                            <path d="M20.5 3H4.5C3.67157 3 3 3.67157 3 4.5V20.5C3 21.3284 3.67157 22 4.5 22H20.5C21.3284 22 22 21.3284 22 20.5V4.5C22 3.67157 21.3284 3 20.5 3ZM9.5 18.5H7V11H9.5V18.5ZM8.25 9.8125C7.425 9.8125 6.75 9.1375 6.75 8.3125C6.75 7.4875 7.425 6.8125 8.25 6.8125C9.075 6.8125 9.75 7.4875 9.75 8.3125C9.75 9.1375 9.075 9.8125 8.25 9.8125ZM18.5 18.5H16V14.375C16 13.3375 15.5 12.75 14.625 12.75C13.9125 12.75 13.5 13.2125 13.3125 13.6625C13.25 13.8125 13.25 14.025 13.25 14.25V18.5H10.75V13.25C10.75 12.8375 10.7125 12.425 10.6375 12H13.25V13.0625C13.5625 12.5375 14.175 11.8125 15.3625 11.8125C16.9 11.8125 17.75 12.7 17.75 14.375V18.5H18.5Z"/>
+                        </svg>
+                                      </span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+            </div>
+            <div class="footer-col iconchegira" id="icon1">
+          <img src="Logotipo.png" alt="Promethea Logo" >
+            </div>
+            <div class="footer-col logo-col">
+            <p class="tagline">Making life easier</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="copyright">© 2025 Promethea S.r.l. – Tutti i diritti riservati.</div>
+        </div>
+    </div>
+
+    </div>
+
+        
+    <script defer src="sidebar.js"></script>
+    <script defer src="theme.js"></script>
+    <script defer src="gradienteottimizzato.js"></script>
+    <script defer src="contattacilink.js"></script>
+    <script>
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('page-loader');
+        loader.classList.add('hidden');
+        setTimeout(() => loader.remove(), 600);
+      });
+    </script>
+  </body>
+</html>

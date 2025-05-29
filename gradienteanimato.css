@@ -1,0 +1,119 @@
+/* Effetto sfondo principale */
+
+.background-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* MODIFICA IN 100% */
+  height: 100vh; /* MODIFICA IN 100% */
+  z-index: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+svg[hidden] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
+.gradient-blobs {
+  filter: url(#gooey-effect) blur(20px);
+  width: 100%;
+  height: 100%;
+  transform: translateZ(0);
+
+}
+
+/* Blobs generici */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: hard-light;
+  opacity: 0.8;
+  will-change: transform;
+
+  
+}
+
+/* Animazioni e posizionamento singoli blobs */
+.blob-1 {
+    background: radial-gradient(circle at center, var(--colore1) 0%, transparent 55%);
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: -20%;
+  animation: blob-move-vertical 40s ease infinite;
+}
+
+.blob-2 {
+  background: radial-gradient(circle at center, rgba(221, 74, 255, 0.5) 0%, rgba(221, 74, 255, 0) 30%);
+  width: 80%;
+  height: 40%;
+  animation: blob-rotate 20s reverse infinite;
+}
+
+.blob-3 {
+  background: radial-gradient(circle at center, var(--colore1) 0%, rgba(100, 220, 255, 0) 30%);
+  width: 80%;
+  height: 80%;
+  top: -30%;
+  left: 0%;
+  animation: blob-move-horizontal2 60s ease infinite;
+}
+
+.blob-4 {
+  background: radial-gradient(circle at center, var(--shadow2) 0%, rgba(200, 50, 50, 0) 10%);
+  width: 80%;
+  height: 80%;
+  animation: blob-move-horizontal 40s ease infinite;
+  
+}
+
+.blob-5 {
+  background: radial-gradient(circle at center, var(--colore2) 0%, transparent 55%);
+  width: 80%;
+  height: 80%;
+  top: 35%;
+  left: 40%;
+}
+
+.blob-interactive {
+  background: radial-gradient(circle at center, var(--colore3) 0%, transparent 15%);
+  width: 100%;
+  height: 100%;
+  top: -25%;
+  left: 5%;
+}
+
+/* Keyframes animazioni */
+@keyframes blob-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes blob-move-vertical {
+  0%, 100% { transform: translateY(-50%); }
+  50% { transform: translateY(50%); }
+}
+
+@keyframes blob-move-horizontal {
+  0%, 100% { transform: translateX(-50%) translateY(-10%); }
+  50% { transform: translateX(50%) translateY(10%); }
+}
+
+
+@keyframes blob-move-horizontal2 {
+  0%, 100% { transform: translateX(-50%) translateY(-40%); }
+  50% { transform: translateX(50%) translateY(5%);
+   }
+}
+
+@keyframes blob-move-horizontal3 {
+  0%, 100% { transform: translateX(5%) translateY(-10%); }
+  50% { transform: translateX(-50%) translateY(-5%); }
+}
+
+

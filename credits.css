@@ -1,0 +1,49 @@
+.credits-section {
+width: 90%;
+margin: 8vh auto;
+padding: 0 clamp(1rem, 4vw, 2rem);
+box-sizing: border-box;
+}
+
+.credits-section h1 {
+font-size: clamp(1.5rem, 2.5vw, 2rem);
+margin-bottom: 0.5em;
+text-align: center;
+}
+
+.credits-section p {
+font-size: clamp(1rem, 2vw, 1.125rem);
+margin-bottom: 2em;
+}
+
+.credit-item {
+  margin-bottom: 2em;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  background: transparent;
+  backdrop-filter: blur(50px);
+  border-radius: 0.75rem;
+  box-shadow: 4px 4px 15px var(--vetro);
+  border: 1px solid var(--colore4);
+  transition: transform 0.2s ease;
+}
+
+.credit-item:hover {
+  transform: scale(1.01);
+}
+
+.credit-item h2 {
+  font-size: clamp(1.125rem, 2.2vw, 1.5rem);
+  margin-bottom: 0.5em;
+}
+
+.credit-item a {
+  color: var(--colore4);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  word-break: break-word;
+}
+
+.credit-item a:hover {
+  text-decoration: underline;
+}
