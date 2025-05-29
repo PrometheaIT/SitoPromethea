@@ -1,0 +1,212 @@
+:root {
+  --switch-width: 4.8rem;
+  --switch-height: 2.4rem;
+  --slider-size: 2rem;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --primary-color: #2B6CB0;
+  --secondary-color: #4A5568;
+  --background-light: linear-gradient(135deg,  rgba(239, 0, 149, 0.5) 0%, var(--light) 20%, rgba(87, 72, 159, 0.5) 100%);
+  --background-dark: linear-gradient(135deg,  rgb(49, 0, 30) 0%, var(--dark) 20%, rgb(26, 21, 48) 100%);
+  --primary: #9F1893;     /* MODULO OTTIMIZZAZIONE */
+  --secondary: #EF0095;   /* MODULO DIGITALIZZAZIONE */
+  --tertiary: #A50063;    /* MODUOLO CONTABILITà */
+  --dark: #0F0F0F;        /* MODULO IMMAGINE */
+  --light: #FFFAF7;
+  --flame: #c40000af;
+  --flame2: #3f0400af;
+  --flame3: #b14700af;
+  --shadow: #9F189350;      /* SHADOW */
+  --shadow2: #A5006350;      /* SHADOW2 */
+  --shadow3: #EF009550;      /* SHADOW3 */
+  --smoke-color-1: rgba(255, 255, 255, 0.15);
+  --smoke-color-2: rgba(159, 24, 147, 0.1);
+  --darkpurple: rgb(87, 72, 159);
+}
+
+html,.sidebar {
+  scrollbar-width: thin;
+}
+
+
+body.light-theme ::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+}
+
+body.light-theme ::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+}
+
+body.dark-theme ::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+}
+
+
+/* light-dark.css */
+body.light-theme {
+  
+  background: var(--background-light);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  --sidebar-background: var(--light);
+  --footer-background: linear-gradient(135deg,  rgba(239, 0, 149, 0.5) 0%, var(--light) 20%, rgb(87, 72, 159) 100%);
+  --text-color: #0F0F0F;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --card-gradient: linear-gradient(160deg, 
+    var(--light) 20%, 
+    var(--primary) 40%, 
+    var(--secondary) 100%);
+  --sidebar-toggle-sfondo: var(--light);
+  --sidebar-toggle-contenuto: var(--dark);
+  --scrollbar-thumb: var(--secondary);
+  --scrollbar-track: var(--light);
+  --vetro: #0f0f0f20;
+  --card3D-UI-background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  --moduli-background: linear-gradient(135deg, var(--shadow-color) 0%, var(--vetro) 100%);
+  --tenue: #FFFAF720;
+  --colore1: #ffa2dc;
+  --colore2 : rgba(255, 70, 163, 0.7);
+  --colore3 : rgba(134, 0, 223, 0.5);
+  --colore4 : var(--secondary);
+  --sfondo1 : linear-gradient(135deg, rgb(159,24,147, 0.5), rgb(239,0,149, 0.5));
+}
+
+body.dark-theme {
+  background: var(--background-dark);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  --sidebar-background: var(--dark);
+  --footer-background: linear-gradient(135deg, var(--secondary), var(--dark) 20%, var(--primary) 100%);
+  --text-color: #F7FAFC;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+  --card-gradient: linear-gradient(160deg, 
+    var(--dark) 20%, 
+    var(--primary) 40%, 
+    var(--secondary) 100%);
+  --sidebar-toggle-sfondo: var(--dark);
+  --sidebar-toggle-contenuto: var(--light);
+  --scrollbar-thumb: var(--primary);
+  --scrollbar-track: var(--dark);
+  --vetro: #FFFAF720;
+  --tenue: #0f0f0f20;
+  --card3D-UI-background: linear-gradient(135deg, var(--darkpurple) 0%, var(--primary) 100%);
+  --moduli-background: linear-gradient(135deg, var(--shadow-color) 0%, var(--vetro) 100%);
+  --colore1 : #20051e;
+  --colore2 : rgba(255, 94, 142, 0.7);
+  --colore3 :  rgba(87, 72, 159, 0.8);
+  --colore4 : var(--darkpurple);
+  --sfondo1 : linear-gradient(135deg, rgb(87, 72, 159, 0.5), rgb(159,24,147, 0.5));
+}
+
+
+.switch {
+  display: block;
+  --width-of-switch: 3.5em;
+  --height-of-switch: 2em;
+  /* size of sliding icon -- sun and moon */
+  --size-of-icon: 1.4em;
+  /* it is like a inline-padding of switch */
+  --slider-offset: 0.3em;
+  width: var(--width-of-switch);
+  height: var(--height-of-switch);
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  z-index: 9999;
+  display: block;
+  cursor: pointer;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4f4f5;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--size-of-icon,1.4em);
+  width: var(--size-of-icon,1.4em);
+  border-radius: 20px;
+  left: var(--slider-offset,0.3em);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+  ;
+ transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #303136;
+}
+
+input:checked + .slider:before {
+  left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+  background: #303136;
+  /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+
+
+
+/* Applica i colori dinamici */
+.content {
+  background: var(--content-background);
+  color: var(--text-color);
+}
+
+.sidebar {
+  background-color: var(--sidebar-background);
+  box-shadow: 0 0 15px var(--shadow-color);
+}
+
+/* Aggiorna altri elementi se necessario */
+.menu-item {
+  color: var(--text-color);
+}
+
+.anim-section,
+.anim-section *:not(svg):not(path) {
+    color: var(--text-color);
+}
+
+#footer {
+    background: var(--footer-background);
+    color: var(--text-color);
+}
+
+#footer a {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+#footer a:hover {
+    opacity: 1;
+}
+
+html {
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  overflow-y: auto; /* Cambia da scroll ad auto */
+
+}
+
+
